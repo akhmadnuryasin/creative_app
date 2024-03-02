@@ -1,23 +1,30 @@
 import NftCard from "./components/NftCard";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Data } from "./utils/Data";
+import Colection from "./sections/Colection";
+// import Hero from "./sections/Hero";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { useRef } from "react";
 
 function App() {
+  const containerRef = useRef(null);
   return (
-    <div className="bg-[#030303] font-museo-moderno">
-      <Navbar />
-      <section>
-        <div className="max-w-screen-xl px-12 mx-auto sm:px-6 lg:px-8">
-          <div className="grid mt-4 gap-11 sm:grid-cols-2 lg:grid-cols-3">
-            {Data.map((item) => (
-              <NftCard key={item.id} {...item} />
-            ))}
-          </div>
+    <LocomotiveScrollProvider
+      options={{
+        smooth: true,
+      }}
+      watch={[]}
+      containerRef={containerRef}
+    >
+      <main data-scroll-container ref={containerRef}>
+        <div className="bg-[#030303] font-museo-moderno" data-scroll-section>
+          <Navbar />
+          {/* <Hero /> */}
+          <Colection />
+          <Footer />
         </div>
-      </section>
-      <Footer />
-    </div>
+      </main>
+    </LocomotiveScrollProvider>
   );
 }
 

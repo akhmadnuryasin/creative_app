@@ -3,11 +3,15 @@ import Atropos from "atropos/react";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const NftCard = ({ url, timeRemaining, price, artistName, ethAmount }) => {
   return (
     <Atropos className="my-atropos">
-      <a
+      <motion.a
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.2 }}
         href="#"
         className="group bg-[#1B1B21] p-3 rounded-2xl block overflow-hidden"
       >
@@ -48,7 +52,7 @@ const NftCard = ({ url, timeRemaining, price, artistName, ethAmount }) => {
             </div>
           </div>
         </div>
-      </a>
+      </motion.a>
     </Atropos>
   );
 };
