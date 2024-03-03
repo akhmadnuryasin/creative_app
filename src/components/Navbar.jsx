@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "./ui/button";
+import { AnimationContext } from "@/context/animation";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+  const { riseUpVariant, riseUpItem, navVariants, itemVariants, tagVariant } =
+    useContext(AnimationContext);
   return (
-    <div className="flex items-center justify-between w-full bg-transparent text-white h-[15vh]">
-      <p className="text-2xl">
+    <motion.div
+      variants={riseUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      className="flex items-center justify-between w-full bg-transparent text-white h-[15vh]"
+    >
+      <motion.p variants={riseUpItem} className="text-2xl">
         Creative
         <span className="text-[#D5F70A]">NFT</span>
-      </p>
+      </motion.p>
+      <motion.div variants={tagVariant}>
+        <Button
+          variants={riseUpItem}
+          className="block bg-transparent border rounded-full md:hidden"
+        >
+          Nav
+        </Button>
+      </motion.div>
       <ul className="relative hidden md:flex gap-x-7">
-        <li>Home</li>
-        <li>About</li>
-        <li>Collections</li>
-        <li>Contacts</li>
+        <motion.li variants={riseUpItem}>Home</motion.li>
+        <motion.li variants={riseUpItem}>About</motion.li>
+        <motion.li variants={riseUpItem}>Collections</motion.li>
+        <motion.li variants={riseUpItem}>Contacts</motion.li>
       </ul>
-      <Button className="block md:hidden">Nav</Button>
-    </div>
+    </motion.div>
   );
 };
 

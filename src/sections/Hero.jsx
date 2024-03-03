@@ -1,41 +1,62 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "@/components/Navbar";
+import { AnimationContext } from "@/context/animation";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const { riseUpVariant, riseUpItem, fade } = useContext(AnimationContext);
   return (
     <div className="h-[100vh]">
       <Navbar />
-      <div className="h-[75vh] flex flex-col items-center justify-center text-center text-white bg-transparent">
-        <h3 className="text-3xl md:text-7xl">
+      <motion.div
+        variants={riseUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        className="h-[75vh] flex flex-col items-center justify-center text-center text-white bg-transparent"
+      >
+        <motion.h3 variants={riseUpItem} className="text-3xl md:text-7xl">
           Discover and Collect The Best NFTs Digital Art.
-        </h3>
-        <h4 className="mt-10 text-base md:text-xl">
+        </motion.h3>
+        <motion.h4
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { delay: 1, duration: 1 },
+          }}
+          className="mt-10 text-base md:text-xl"
+        >
           There are a thousand more NFTs that interest you, find and collect
           what you like!
-        </h4>
+        </motion.h4>
         <div className="flex items-center justify-center mt-8 md:flex-col gap-x-4">
-          <div className="flex justify-center text-center text-white gap-x-7">
-            <div className="text-center">
+          <motion.div
+            variants={riseUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            className="flex justify-center text-center text-white gap-x-7"
+          >
+            <motion.div variants={riseUpItem} className="text-center">
               <p className="text-2xl">
-                24K<span>+</span>
+                24K<span className="text-[#0476b5]">+</span>
               </p>
-              <p className="text-xs">Collection</p>
-            </div>
-            <div className="text-center">
+              <p className="text-xs text-[#88888a]">Collection</p>
+            </motion.div>
+            <motion.div variants={riseUpItem} className="text-center">
               <p className="text-2xl">
-                18K<span>+</span>
+                18K<span className="text-[#f53627]">+</span>
               </p>
-              <p className="text-xs">Actions</p>
-            </div>
-            <div className="text-center">
+              <p className="text-xs text-[#88888a]">Actions</p>
+            </motion.div>
+            <motion.div variants={riseUpItem} className="text-center">
               <p className="text-2xl">
-                20K<span>+</span>
+                20K<span className="text-[#ea8113]">+</span>
               </p>
-              <p className="text-xs">Artist</p>
-            </div>
-          </div>
+              <p className="text-xs text-[#88888a]">Artist</p>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
