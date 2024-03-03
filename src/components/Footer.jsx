@@ -75,7 +75,7 @@ const Footer = () => {
       <div className="w-[100%] h-14 bg-transparent text-white flex justify-center items-center border rounded-t-xl">
         <p>
           Copyright {CurrentYear}
-          <span className="text-[#D5F70A]">Akhmad Nuryasin</span>
+          <span className="text-[#D5F70A]"> Akhmad Nuryasin</span>
         </p>
       </div>
     </div>
