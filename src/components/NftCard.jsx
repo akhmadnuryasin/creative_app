@@ -21,7 +21,7 @@ const NftCard = ({ url, timeRemaining, price, artistName, ethAmount }) => {
           className="h-[350px] w-full rounded-2xl object-cover transition duration-500 sm:h-[450px]"
         />
 
-        <div className="bg-[#1B1B21] pt-3 px-2 mt-2">
+        <div className="bg-[#1B1B21 pt-3 px-2 mt-2">
           <div className="flex justify-between mb-1">
             <div className="flex gap-x-1">
               <MdAccessTimeFilled fill="#EEEEEE" />

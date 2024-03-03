@@ -1,20 +1,41 @@
 import React from "react";
+import Navbar from "@/components/Navbar";
 
 const Hero = () => {
   return (
-    <div className="h-[83vh] rounded-b-3xl flex-col bg-[#f1f1f1] px-10 mb-16 flex justify-center items-center">
-      <h2 className="text-xl text-center">
-        Inspirasi Digital, Ekspresi Tanpa Batas: NFT Platform - Seni Masa Depan
-        Anda!
-      </h2>
-      <p className="mt-12 text-center">
-        Selamat datang di NFT Platform, sebuah dunia di mana inspirasi digital
-        bertemu dengan ekspresi tanpa batas. Kami mendorong perjumpaan antara
-        seniman-seniman berbakat dan para pecinta seni yang haus akan
-        kreativitas inovatif. Di sini, kami menghadirkan koleksi NFT eksklusif
-        yang memukau, menggabungkan keindahan seni digital dengan keunikan
-        teknologi blockchain.
-      </p>
+    <div className="h-[100vh]">
+      <Navbar />
+      <div className="h-[75vh] flex flex-col items-center justify-center text-center text-white bg-transparent">
+        <h3 className="text-3xl md:text-7xl">
+          Discover and Collect The Best NFTs Digital Art.
+        </h3>
+        <h4 className="mt-10 text-base md:text-xl">
+          There are a thousand more NFTs that interest you, find and collect
+          what you like!
+        </h4>
+        <div className="flex items-center justify-center mt-8 md:flex-col gap-x-4">
+          <div className="flex justify-center text-center text-white gap-x-7">
+            <div className="text-center">
+              <p className="text-2xl">
+                24K<span>+</span>
+              </p>
+              <p className="text-xs">Collection</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl">
+                18K<span>+</span>
+              </p>
+              <p className="text-xs">Actions</p>
+            </div>
+            <div className="text-center">
+              <p className="text-2xl">
+                20K<span>+</span>
+              </p>
+              <p className="text-xs">Artist</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
